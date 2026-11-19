@@ -1,0 +1,90 @@
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/montserrat-400.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/montserrat-500.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/montserrat-600.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/montserrat-700.ttf') format('truetype');
+}
+
+:root {
+  font-family: 'Montserrat', system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+  --serif: 'Montserrat', system-ui, sans-serif;
+  --mono: Consolas, 'Liberation Mono', monospace;
+  --papel: #f5f2ea;
+  --superficie: #fffcf5;
+  --texto: #252920;
+  --tenue: #555c50;
+  --borde: #d6d1c3;
+  --control: #75796b;
+  --bosque: #24563b;
+  --tinta-verde: #e3ebdf;
+  --error: #932c24;
+  --control-radio: .375rem;
+  color: var(--texto);
+  background: var(--papel);
+  line-height: 1.5;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+body { margin: 0; }
+h1, h2, h3, dl, dd, p { margin: 0; }
+h1, h2, h3 { font-family: var(--serif); font-weight: 600; line-height: 1.15; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.25rem; }
+button, input, select { font: inherit; min-height: 2.75rem; }
+button {
+  cursor: pointer;
+  background: var(--superficie);
+  color: var(--texto);
+  border: 1px solid var(--control);
+  border-radius: var(--control-radio);
+  padding: .5rem .75rem;
+  font-weight: 600;
+}
+button:hover { background: var(--tinta-verde); }
+button:disabled { opacity: .55; cursor: default; }
+a { color: var(--bosque); text-underline-offset: .15em; }
+a:hover { color: var(--texto); }
+.enlace-manual { align-self: center; font-size: .875rem; font-weight: 600; }
+:focus-visible { outline: 3px solid var(--bosque); outline-offset: 3px; }
+
+.visualmente-oculto:not(:focus-within) {
+  position: absolute;
+  clip-path: inset(50%);
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.saltar:focus {
+  position: absolute;
+  inset-block-start: .5rem;
+  inset-inline-start: .5rem;
+  z-index: 2;
+  color: var(--bosque);
+  background: var(--superficie);
+  padding: .75rem 1rem;
+}

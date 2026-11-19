@@ -1,0 +1,10 @@
+# Simulador de regeneración del bosque.
+#   docker compose up --build   → abrir http://localhost:5180
+name: bosque
+
+services:
+  simulador:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "5180:80"

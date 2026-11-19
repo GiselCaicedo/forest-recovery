@@ -1,0 +1,23 @@
+.pagina { width: min(100%, 84rem); margin-inline: auto; padding: 2rem 1.5rem; }
+.cabecera { display: grid; gap: 1.25rem; padding-block: .75rem 1rem; border-block-end: 1px solid var(--borde); }
+.cabecera h1 { font-size: clamp(2rem, 1.375rem + 2.5vw, 3.75rem); letter-spacing: -.035em; text-wrap: balance; }
+.barra-herramientas { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: .75rem; }
+.distribucion { display: grid; gap: 1.5rem; padding-block: 1.5rem; }
+.barra-lateral, .resultados { display: grid; align-content: start; gap: 1.5rem; min-width: 0; }
+.barra-lateral > section { background: var(--superficie); border: 1px solid var(--borde); padding: 1rem; }
+.barra-lateral h2, .resultados h2 { margin-block-end: .75rem; }
+.tiradas { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1rem; }
+
+@media (min-width: 52rem) {
+  .distribucion { grid-template-columns: 15rem minmax(0, 1fr); gap: 2rem; }
+  .cabecera { padding-block-end: 1.25rem; }
+  .tiradas { grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); }
+}
+
+@media (max-width: 32rem) {
+  .pagina { padding: 1rem; }
+  .distribucion, .barra-lateral { gap: 1rem; }
+  .cabecera { padding-block-start: .25rem; }
+  .barra-lateral > section { padding: .75rem; }
+  .barra-lateral h2 { font-size: 1.25rem; }
+}

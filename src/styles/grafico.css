@@ -1,0 +1,15 @@
+.panel-grafico {
+  min-width: 0;
+  border: 1px solid var(--borde);
+  border-block-start: 2px solid var(--bosque);
+  background: var(--superficie);
+  padding: 1rem;
+}
+.lienzo-grafico { min-width: 0; height: clamp(13rem, 26vw, 19rem); }
+.lienzo-grafico .recharts-cartesian-axis-tick { font-family: var(--mono); }
+.leyenda { display: flex; flex-wrap: wrap; gap: .5rem 1rem; color: var(--tenue); margin-block-end: .75rem; font-size: .8125rem; }
+.leyenda span { display: flex; align-items: center; gap: .5rem; }
+.leyenda i { display: block; width: 1rem; height: .5rem; }
+.marca-plantas { background: var(--bosque); }
+.leyenda .marca-promedio { height: 0; border-block-start: 2px dashed var(--texto); }
+.marca-rango { background: var(--tinta-verde); border: 1px solid var(--control); }

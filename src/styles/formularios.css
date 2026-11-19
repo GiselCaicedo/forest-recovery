@@ -1,0 +1,55 @@
+.formulario, .campo { display: grid; gap: .25rem; }
+.formulario { gap: .75rem; }
+.campo label, .rango legend { color: var(--texto); font-size: .875rem; font-weight: 600; }
+input[type="number"], select {
+  color: var(--texto);
+  background: var(--superficie);
+  border: 1px solid var(--control);
+  border-radius: var(--control-radio);
+  width: 100%;
+  padding: .5rem;
+}
+.campo input:is(:user-invalid, [aria-invalid="true"]) { box-shadow: inset 0 0 0 1px var(--error); border-color: var(--error); }
+.error-campo { color: var(--error); font-size: .8125rem; }
+.par-campos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .5rem; }
+.rango { border: 0; margin: .5rem 0 0; padding: 0; min-inline-size: 0; }
+.rango legend { padding: 0; margin-block-end: .25rem; }
+.rango label, .config-rangos p { color: var(--tenue); font-size: .8125rem; }
+.config-rangos summary, .filtros summary { cursor: pointer; padding-block: .5rem; min-height: 2.75rem; }
+.config-rangos summary { font-weight: 600; font-size: .875rem; }
+.primario { color: var(--superficie); background: var(--bosque); border-color: var(--bosque); }
+.primario:hover { color: var(--bosque); background: var(--tinta-verde); }
+.acciones-tarjeta { display: flex; gap: .5rem; flex-wrap: wrap; }
+.acciones-tarjeta button { font-size: .8125rem; }
+.filtros { border-block: 1px solid var(--borde); padding-block: .25rem; }
+.filtros summary { color: var(--texto); font: 400 1.25rem/1.4 var(--serif); }
+.filtros .formulario { padding-block: .5rem .75rem; }
+.filtros .acciones-filtros { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+/* Cargar datos desde CSV */
+.cargar-datos { display: grid; gap: .75rem; }
+.cargar-datos h2 { margin-block-end: 0; }
+#ayuda-cargar { color: var(--tenue); font-size: .875rem; margin: 0; }
+#ayuda-cargar code { font-family: var(--mono); background: var(--tinta-verde); padding: 0 .2em; border-radius: .2em; overflow-wrap: anywhere; }
+.cargar-datos input[type="file"] {
+  width: 100%;
+  max-width: 100%;
+  min-height: auto;
+  padding: .5rem;
+  border: 1px dashed var(--control);
+  border-radius: var(--control-radio);
+  background: var(--superficie);
+}
+.cargar-datos input[type="file"]::file-selector-button {
+  font: inherit;
+  margin-inline-end: .5rem;
+  padding: .35rem .6rem;
+  border: 1px solid var(--control);
+  border-radius: var(--control-radio);
+  background: var(--papel);
+  cursor: pointer;
+}
+.aviso-carga { color: var(--bosque); font-size: .875rem; margin: 0; }
+.errores-carga { color: var(--error); font-size: .875rem; margin: 0; }
+.errores-carga p { margin: 0; }
+.errores-carga ul { margin: .25rem 0 0; padding-inline-start: 1.25rem; }
