@@ -16,7 +16,7 @@ export default function ModalBienvenida() {
   });
 
   function cerrar() {
-    try { sessionStorage.setItem('modal-bienvenida', '1'); } catch {}
+    try { sessionStorage.setItem('modal-bienvenida', '1'); } catch (e) { void e; }
     setVisible(false);
   }
 
