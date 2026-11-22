@@ -32,13 +32,13 @@ export default function CargarDatos({ onCargar }) {
   return (
     <section className="cargar-datos" aria-labelledby="titulo-cargar">
       <h2 id="titulo-cargar">Cargar datos</h2>
-      <p id="ayuda-cargar">
+      {/* <p id="ayuda-cargar">
         Sube un archivo CSV con tus tiradas. Debe incluir las columnas
         {' '}<code>frutosIniciales</code>, <code>frutosComidos</code>, <code>semillasPorFruto</code>,
         {' '}<code>pctRaton</code>, <code>pctGermina</code> y <code>pctSobrevive</code>. Los resultados se
         calculan en el simulador. Puedes partir del archivo que genera «Exportar CSV» o del
         {' '}<a href="./ejemplo-datos.csv" download>archivo de ejemplo</a>.
-      </p>
+      </p> */}
       <input
         type="file"
         accept=".csv,text/csv"

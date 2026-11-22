@@ -16,6 +16,7 @@ export default function PanelEstadisticas({ estadisticas }) {
 
   return (
     <section className="panel-estadisticas" aria-labelledby="titulo-estadisticas">
+
       <h2 id="titulo-estadisticas">Estadísticas</h2>
       <dl className="estadisticas">
         {medidas.map(([etiqueta, valor]) => (

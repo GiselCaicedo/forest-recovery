@@ -49,6 +49,9 @@ input[type="number"], select {
   background: var(--papel);
   cursor: pointer;
 }
+.secundario { background: var(--papel); border-color: var(--control); }
+.secundario:hover { background: var(--superficie); }
+
 .aviso-carga { color: var(--bosque); font-size: .875rem; margin: 0; }
 .errores-carga { color: var(--error); font-size: .875rem; margin: 0; }
 .errores-carga p { margin: 0; }

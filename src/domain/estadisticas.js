@@ -1,7 +1,7 @@
 export function calcularVarianza(valores, promedio) {
   if (valores.length < 2) return null;
   const suma = valores.reduce((total, valor) => total + (valor - promedio) ** 2, 0);
-  return suma / (valores.length - 1);
+  return suma / (valores.length);
 }
 
 export function calcularEstadisticas(valores) {

@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useReducer, useState } from 'react';
 import { calcularTirada } from '../domain/calculos.js';
 import { calcularEstadisticas } from '../domain/estadisticas.js';
-import { generarTiradasPrueba } from '../domain/generador.js';
+import { generarTiradasPrueba, rangosPorDefecto } from '../domain/generador.js';
 import { actualizarRegistro, crearLote, iniciarRegistro, persistirRegistro } from './registroTiradas.js';
+import { datosClase } from '../data/datosClase.js';
 
 const filtrosIniciales = { origen: 'cargar', min: '', max: '', numero: '' };
 
@@ -39,8 +40,14 @@ export function useTiradas() {
     resultados, visibles, estadisticas, configuracion, filtros, setFiltros, almacenado,
     cargarArchivo: (entradas) => cargarLote('cargar', entradas),
     generarPrueba: (config) => cargarLote('prueba', generarTiradasPrueba(config.cantidad, config.rangos), config),
+    cargarClase: () => cargarLote('clase', datosClase),
+    generarMas: (cantidad) => dispatch({
+      tipo: 'agregar',
+      lote: crearLote(generarTiradasPrueba(cantidad, rangosPorDefecto), 'clase'),
+    }),
     guardar: (entrada, id) => dispatch(id ? { tipo: 'editar', entrada, id }
       : { tipo: 'agregar', lote: crearLote([entrada], 'manual') }),
+    reemplazarManual: (entradas) => dispatch({ tipo: 'lote', origen: 'manual', lote: crearLote(entradas, 'manual') }),
     eliminar: (id) => dispatch({ tipo: 'eliminar', id }),
     limpiar: () => { dispatch({ tipo: 'limpiar' }); setFiltros(filtrosIniciales); },
   };

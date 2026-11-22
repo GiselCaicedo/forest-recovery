@@ -1,4 +1,4 @@
-export const nombresOrigen = { cargar: 'Cargar datos', prueba: 'Prueba', manual: 'Manual' };
+export const nombresOrigen = { cargar: 'Tabla fija', clase: 'Tabla clase', manual: 'Manual' };
 
 export default function SelectorOrigen({ origen, onChange, opciones = ['cargar'] }) {
   return (
